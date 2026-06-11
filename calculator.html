@@ -59,37 +59,87 @@ body{
     font-size:1.3rem;
     cursor:pointer;
     color:white;
-    background:rgba(255,255,255,0.12);
     transition:all 0.2s ease;
 }
 
 .buttons button:hover{
     transform:translateY(-3px);
-    background:rgba(255,255,255,0.2);
 }
 
 .buttons button:active{
     transform:scale(0.95);
 }
 
+/* Number Colors */
+
+.zero{
+    background:#ff6b6b;
+}
+
+.one{
+    background:#6c5ce7;
+}
+
+.two{
+    background:#0984e3;
+}
+
+.three{
+    background:#00b894;
+}
+
+.four{
+    background:#fdcb6e;
+    color:black;
+}
+
+.five{
+    background:#e17055;
+}
+
+.six{
+    background:#f1c40f;
+    color:black;
+}
+
+.seven{
+    background:#8e44ad;
+}
+
+.eight{
+    background:#16a085;
+}
+
+.nine{
+    background:#d63031;
+}
+
+/* Operators */
+
 .operator{
-    background:#ff9800 !important;
+    background:#ff9800;
+}
+
+.plus{
+    color:#00ff00;
+    font-weight:bold;
+    font-size:1.6rem;
+}
+
+.minus{
+    color:#ff0000;
+    font-weight:bold;
+    font-size:1.6rem;
 }
 
 .equal{
-    background:#00c853 !important;
+    background:#00c853;
     grid-column:span 2;
 }
 
 .clear{
-    background:#ff1744 !important;
+    background:#ff1744;
     grid-column:span 2;
-}
-
-.operator:hover,
-.equal:hover,
-.clear:hover{
-    opacity:0.9;
 }
 
 @media(max-width:450px){
@@ -110,25 +160,25 @@ body{
     <input type="text" id="result" disabled>
 
     <div class="buttons">
-        <button onclick="appendValue('7')">7</button>
-        <button onclick="appendValue('8')">8</button>
-        <button onclick="appendValue('9')">9</button>
+        <button class="seven" onclick="appendValue('7')">7</button>
+        <button class="eight" onclick="appendValue('8')">8</button>
+        <button class="nine" onclick="appendValue('9')">9</button>
         <button class="operator" onclick="appendValue('/')">÷</button>
 
-        <button onclick="appendValue('4')">4</button>
-        <button onclick="appendValue('5')">5</button>
-        <button onclick="appendValue('6')">6</button>
+        <button class="four" onclick="appendValue('4')">4</button>
+        <button class="five" onclick="appendValue('5')">5</button>
+        <button class="six" onclick="appendValue('6')">6</button>
         <button class="operator" onclick="appendValue('*')">×</button>
 
-        <button onclick="appendValue('1')">1</button>
-        <button onclick="appendValue('2')">2</button>
-        <button onclick="appendValue('3')">3</button>
-        <button class="operator" onclick="appendValue('-')">−</button>
+        <button class="one" onclick="appendValue('1')">1</button>
+        <button class="two" onclick="appendValue('2')">2</button>
+        <button class="three" onclick="appendValue('3')">3</button>
+        <button class="operator minus" onclick="appendValue('-')">−</button>
 
-        <button onclick="appendValue('0')">0</button>
+        <button class="zero" onclick="appendValue('0')">0</button>
         <button onclick="appendValue('.')">.</button>
         <button class="equal" onclick="calculate()">=</button>
-        <button class="operator" onclick="appendValue('+')">+</button>
+        <button class="operator plus" onclick="appendValue('+')">+</button>
 
         <button class="clear" onclick="clearResult()">C</button>
     </div>
